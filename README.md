@@ -8,11 +8,14 @@
 
 ## Demo data
 
-`UserData{ Name: "Kiss Csaba", Age: 45, Address: "1222 Budapest, Szent János utca 7.", Agree: true, FulkID: "FLK-001122", }`
+```
+UserData{ Name: "Kiss Csaba", Age: 45, Address: "1222 Budapest, Szent János utca 7.", Agree: true, FulkID: "FLK-001122", }
+```
 
 ## Docker Environment variables
 
 **JWT_SECRET**: this will be used for encoding the jwt token
+
 **ADDR**: the HTTP Server port. (Default: ":5000")
 
 **REMOTE**: the remote URL to redirect (Default: "http://localhost:5000/redirpage")
@@ -23,8 +26,12 @@ Run the container on site1 and site2. Site1 will redirect the client to site2.
 
 ### Site1
 
-`docker run -it -p 5000:5000 --env REMOTE="http://[site2_url]:5002/redirpage" tkircsi/cookie-test`
+```
+docker run -it -p 5000:5000 --env REMOTE="http://[site2_url]:5002/redirpage" tkircsi/cookie-test
+```
 
 ### Site2
 
-`docker run -it -p 5002:5002 --env ADDR=":5002" tkircsi/cookie-test`
+```
+docker run -it -p 5002:5002 --env ADDR=":5002" tkircsi/cookie-test
+```
