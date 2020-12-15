@@ -23,8 +23,8 @@ Run the container on site1 and site2. Site1 will redirect the client to site2.
 
 ### Site1
 
-docker run -it -p 5000:5000 --env REMOTE="http://[site2_url]:5002/redirpage" tkircsi/cookie-test
+`docker run -it -p 5000:5000 --env REMOTE="http://[site2_url]:5002/redirpage" tkircsi/cookie-test`
 
 ### Site2
 
-docker run -it -p 5002:5002 --env ADDR=":5002" tkircsi/cookie-test
+`docker run -it -p 5002:5002 --env ADDR=":5002" tkircsi/cookie-test`
