@@ -82,14 +82,14 @@ func redirpage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	userData, err := ParseJWT(cookie.Value)
+	user, err := ParseJWT(cookie.Value)
 	if err != nil {
 		log.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "UserData: %v", userData)
+	fmt.Fprintf(w, "UserData: %v", user)
 }
 
 func GenerateJWT(u UserData) (string, error) {
